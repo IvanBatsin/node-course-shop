@@ -1,0 +1,51 @@
+<nav>
+  <div class="nav-wrapper">
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      {{#if isHome}}
+        <li class="active"><a href="/">Main</a></li>
+      {{else}}
+      <li><a href="/">Main</a></li>
+      {{/if}}
+
+      {{#if isCourses}}
+        <li class="active"><a href="/courses">All courses</a></li>
+      {{else}}
+        <li><a href="/courses">All courses</a></li>
+      {{/if}}
+
+      {{#if isAuth}}
+        {{#if isCard}}
+          <li class="active"><a href="/card">Card</a></li>
+        {{else}}
+          <li><a href="/card">Card</a></li>
+        {{/if}}
+
+        {{#if isAdd}}
+            <li class="active"><a href="/add">Add</a></li>
+          {{else}}
+            <li><a href="/add">Add</a></li>
+        {{/if}}
+
+        {{#if isOrder}}
+          <li class="active"><a href="/order">Orders</a></li>
+        {{else}}
+          <li><a href="/order">Orders</a></li>
+        {{/if}}
+
+        {{#if isProfile}}
+          <li class="active"><a href="/profile">Profile</a></li>
+        {{else}}
+          <li><a href="/profile">Profile</a></li>
+        {{/if}}
+
+          <li><a href="/auth/logout">Exit</a></li>
+      {{else}}
+        {{#if isLogin}}
+          <li class="active"><a href="/auth#login">Sing in</a></li>
+        {{else}}
+        <li><a href="/auth#login">Sing in</a></li>
+        {{/if}}
+      {{/if}}
+    </ul>
+  </div>
+</nav>

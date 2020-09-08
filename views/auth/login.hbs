@@ -1,0 +1,76 @@
+<div class="auth">
+  <div class="row">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s6"><a class="active" href="#login">Sing in</a></li>
+        <li class="tab col s6"><a href="#reg">Registration</a></li>
+      </ul>
+    </div>
+    <div id="login" class="col s6 offset-s3">
+      <h3>Sing in out shop</h3>
+
+      {{#if loginError}}
+        <p class="alert">{{loginError}}</p>
+      {{/if}}
+
+      <form action="/auth/login" method="POST">
+        <div class="input-field">
+          <input id="email" type="email" class="validate" required name="email">
+          <label for="email">Email</label>
+          <span class="helper-text" data-error="Enter email"></span>
+        </div>
+
+        <div class="input-field">
+          <input id="password" type="password" class="validate" required name="password">
+          <label for="password">Password</label>
+          <span class="helper-text" data-error="Enter password"></span>
+        </div>
+
+        <input type="hidden" name="_csrf" value="{{csrf}}">
+
+        <p><a href="/auth/reset">Forgot password?</a></p>
+
+        <button class="btn btn-primary" type="submit">Sing in</button>
+      </form>
+    </div>
+
+
+    <div id="reg" class="col s6 offset-s3">
+      <h3>Create account</h3>
+
+      {{#if regError}}
+        <p class="alert">{{regError}}</p>
+      {{/if}}
+
+      <form action="/auth/reg" method="POST" novalidate>
+        <div class="input-field">
+          <input id="name" type="text" class="validate" required name="name">
+          <label for="name">Name</label>
+          <span class="helper-text" data-error="Enter name"></span>
+        </div>
+
+        <div class="input-field">
+          <input id="remail" type="email" class="validate" required name="email">
+          <label for="remail">Email</label>
+          <span class="helper-text" data-error="Enter email"></span>
+        </div>
+
+        <div class="input-field">
+          <input id="rpassword" type="password" class="validate" required name="password">
+          <label for="rpassword">Password</label>
+          <span class="helper-text" data-error="Enter password"></span>
+        </div>
+
+        <div class="input-field">
+          <input id="confirm" type="password" class="validate" required name="confirm">
+          <label for="confirm">Confirm password</label>
+          <span class="helper-text" data-error="Confir your password"></span>
+        </div>
+
+        <input type="hidden" name="_csrf" value="{{csrf}}">
+
+        <button class="btn btn-primary" type="submit">Log in</button>
+      </form>
+    </div>
+  </div>
+</div>
